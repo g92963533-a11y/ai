@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card } from '@/components/ui/card'
-import { GoogleSignInButton } from '@/components/google-signin-button'
 
 export function AuthForm({ mode }: { mode: 'sign-in' | 'sign-up' }) {
   const router = useRouter()
@@ -51,20 +50,6 @@ export function AuthForm({ mode }: { mode: 'sign-in' | 'sign-up' }) {
             ? 'Sign up to get started'
             : 'Sign in to your account to continue'}
         </p>
-      </div>
-
-      <GoogleSignInButton
-        mode={isSignUp ? 'signup' : 'signin'}
-        onError={(err) => setError(err)}
-      />
-
-      <div className="relative my-4">
-        <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-muted"></div>
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-card px-2 text-muted-foreground">Or</span>
-        </div>
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
